@@ -1,0 +1,29 @@
+@use '../helpers' as *;
+
+.sitemain,
+.is-root-container {
+	.wp-block-columns {
+		margin: 0;
+		gap: 2rem;
+		@include breakpoint(tablet-landscape) {
+			gap: 2.4rem;
+		}
+		.wp-block-column {
+			display: flex;
+			flex-direction: column;
+			gap: 1.6rem;
+		}
+		&.is-style-sidebar {
+			grid-column: 1 / -1;
+			@include breakpoint(tablet-landscape) {
+				display: grid;
+				grid-template-columns: 2fr 5fr;
+				gap: 4rem;
+				> *:not(:first-child) {
+					grid-column: 2;
+				}
+			}
+
+		}
+	}
+}

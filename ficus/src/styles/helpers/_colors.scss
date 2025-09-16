@@ -1,0 +1,12 @@
+/* PALETTE */
+/* dove possibile riprendiamo i colori settati come CSS vars in theme.json per non duplicare valori */
+:root {
+  --color-primary: var(--wp--preset--color--primary); /* #84A98C */
+  --color-secondary: var(--wp--preset--color--secondary); /* #657B77 */
+  --color-accent: var(--wp--preset--color--accent); /* #CBA867 */
+  --color-text: var(--wp--preset--color--black); /* #222222 */
+  --color-text-inverted: var(--wp--preset--color--white); /* #ffffff */
+  --color-default-bg: var(--wp--preset--color--white); /* #ffffff */
+  --color-secondary-bg: #F0F0F0;
+  --gradient-primary: var(--wp--preset--gradient--brand-gradient); /* da primary a secondary */
+} 

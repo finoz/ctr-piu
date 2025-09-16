@@ -1,0 +1,173 @@
+{
+	"version": 2,
+	"settings": {
+		"appearanceTools": false,
+		"color": {
+			"defaultPalette": false,
+			"defaultGradients": false,
+			"custom": false,
+			"customGradient": false,
+			"palette": [
+				{
+					"name": "Black",
+					"slug": "black",
+					"color": "#222222"
+				},
+				{
+					"name": "White",
+					"slug": "white",
+					"color": "#FFFFFF"
+				},
+				{
+					"name": "Primary",
+					"slug": "primary",
+					"color": "#657B77"
+				},
+				{
+					"name": "Secondary",
+					"slug": "secondary",
+					"color": "#84A98C"
+				},
+				{
+					"name": "Accent",
+					"slug": "accent",
+					"color": "#CBA867"
+				}
+			],
+			"gradients": [
+				{
+					"name": "Brand Gradient",
+					"slug": "brand-gradient",
+					"gradient": "linear-gradient(135deg, #84A98C 0%, #657B77 100%)"
+				}
+			]
+		},
+		"typography": {
+			"customFontSize": false,
+            "lineHeight": false,
+            "dropCap": false,
+            "fontStyle": false,
+            "fontWeight": false,
+            "letterSpacing": false,
+            "textDecoration": false,
+            "textTransform": false,
+            "fontSizes": [
+				{
+					"name": "Small",
+					"slug": "small",
+					"size": "1.4rem"
+				},
+				{
+					"name": "Normal",
+					"slug": "normal",
+					"size": "1.8rem"
+				},
+				{
+					"name": "Medium",
+					"slug": "medium",
+					"size": "2.4rem"
+				},
+				{
+					"name": "Large",
+					"slug": "large",
+					"size": "3.2rem"
+				},
+				{
+					"name": "Extra Large",
+					"slug": "extra-large",
+					"size": "3.6rem"
+				},
+				{
+					"name": "Mega",
+					"slug": "mega",
+					"size": "4.8rem"
+				},
+				{
+					"name": "Huge",
+					"slug": "huge",
+					"size": "6.4rem"
+				}
+			],
+			"fontFamilies": [
+				{ "name": "Primary", "slug": "primary", "fontFamily": "Pathway Extreme" },
+				{ "name": "Secondary", "slug": "secondary", "fontFamily": "Karla" }
+			]
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true,
+			"blockGap": null,
+			"unit": "rem"
+		},
+		"layout": {
+			"contentSize": "100%"
+		}
+	},
+	"styles": {
+		"elements": {
+			"h1": { "typography": { "fontFamily": "var(--font-family-primary)" } },
+			"h2": { "typography": { "fontFamily": "var(--font-family-primary)" } },
+			"link": { "color": { "text": "var(--color-primary)" } },
+			"button": {
+				"spacing": {
+					"margin": { "top": "0", "bottom": "0", "left": "0", "right": "0" }
+				}
+			}
+		},
+		"spacing": {
+			"margin": {
+				"top": "0",
+				"right": "0",
+				"bottom": "0",
+				"left": "0"
+			}
+		},
+   		"blocks": {
+			"core/paragraph": {
+				"spacing": {
+					"margin": { "top": "0", "bottom": "0", "left": "0", "right": "0" }
+				}
+			},
+			"core/heading": {
+				"spacing": {
+					"margin": { "top": "0", "bottom": "0", "left": "0", "right": "0" }
+				}
+			},
+			"core/list": {
+				"spacing": {
+					"margin": { "top": "0", "bottom": "0", "left": "0", "right": "0" }
+				}
+			},
+			"core/group": {
+				"spacing": {
+					"margin": { "top": "0", "bottom": "0", "left": "0", "right": "0" }
+				}
+			},
+
+			"core/column": {
+				"spacing": {
+					"margin": { "top": "0", "bottom": "0", "left": "0", "right": "0" }
+				}
+			},
+			"core/quote": {
+				"spacing": {
+					"margin": { "top": "0", "bottom": "0", "left": "0", "right": "0" }
+				}
+			},
+			"core/image": {
+				"spacing": {
+					"margin": { "top": "0", "bottom": "0", "left": "0", "right": "0" }
+				}
+			}
+		}
+	},
+	"custom": {
+		"layout": {
+			"disableContentMargins": true
+		}
+	},
+	"defaultFontSizes": false,
+	"customFontSize": false,
+	"customTemplates": [],
+  	"templateParts": []
+}

@@ -1,0 +1,80 @@
+@use '../helpers' as *;
+
+.sitemain,
+.is-root-container {
+	.wp-block-group {
+		display: flex;
+		flex-direction: column;
+		gap: 1.6rem;
+		&.has-background {
+			gap: 2.4rem;
+			@include breakpoint(tablet-landscape) {
+				gap: 3.6rem;
+			}
+		}
+		&.is-style-bigcounter_group {
+			gap: 5.4rem;
+			.bigcounter_group-item {
+				display: flex;
+				flex-direction: row;
+				align-items: start;
+				gap: 2rem;
+				& > * {
+					width: 100%;
+				}
+				@include breakpoint(tablet-landscape) {
+					align-items: end;
+				}
+			}
+			.bigcounter_group-marker {
+				position: relative;
+				display: inline-flex;
+				width: 2em;
+				height: 2em;
+				padding: 0.1em;
+				color: var(--color-primary);
+				border: 0.1em solid currentColor;
+				align-items: end;
+				justify-content: end;
+				line-height: 1;
+				flex-shrink: 0;
+				&::before {
+					position: absolute;
+					top: 0.2em;
+					right: -0.1em;
+					content: '';
+					background-color: var(--color-default-bg);
+					display: block;
+					width: 0.1em;
+					height: 0.6em;
+				}
+			}
+		}
+		&.is-style-partnership_logos {
+			flex-direction: row;
+			align-items: center;
+			gap: 2.4rem;
+			> * {
+				&:not(figure) {
+					width: auto;
+					line-height: 1;
+				}
+			}
+			@include breakpoint(tablet-landscape) {
+				flex-direction: column;
+				align-items: end;
+				position: sticky;
+				top: var(--header-height-desktop);
+				padding-right: 4rem;
+				gap: 1rem;
+				
+			}
+			> * {
+				width: 100%;
+			}
+		}
+		> * {
+			width: 100%;
+		}
+	}
+}
