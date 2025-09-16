@@ -11,7 +11,7 @@
 				{
 					"name": "Black",
 					"slug": "black",
-					"color": "#222222"
+					"color": "#111"
 				},
 				{
 					"name": "White",
@@ -19,26 +19,31 @@
 					"color": "#FFFFFF"
 				},
 				{
-					"name": "Primary",
-					"slug": "primary",
-					"color": "#657B77"
+					"name": "White smoke",
+					"slug": "white-smoke",
+					"color": "#F2F2F2"
 				},
 				{
-					"name": "Secondary",
-					"slug": "secondary",
-					"color": "#84A98C"
+					"name": "Delft Blue",
+					"slug": "delft-blue",
+					"color": "#243760"
 				},
 				{
-					"name": "Accent",
-					"slug": "accent",
-					"color": "#CBA867"
+					"name": "Blue Gray",
+					"slug": "blue-gray",
+					"color": "#6C9DD9"
+				},
+				{
+					"name": "Moonstone",
+					"slug": "moonstone",
+					"color": "#53C2D7"
 				}
 			],
 			"gradients": [
 				{
 					"name": "Brand Gradient",
 					"slug": "brand-gradient",
-					"gradient": "linear-gradient(135deg, #84A98C 0%, #657B77 100%)"
+					"gradient": "linear-gradient(135deg, #243760 0%, #6C9DD9 100%)"
 				}
 			]
 		},
@@ -53,6 +58,11 @@
             "textTransform": false,
             "fontSizes": [
 				{
+					"name": "Exra Small",
+					"slug": "extra-small",
+					"size": "1rem"
+				},
+				{
 					"name": "Small",
 					"slug": "small",
 					"size": "1.4rem"
@@ -60,12 +70,12 @@
 				{
 					"name": "Normal",
 					"slug": "normal",
-					"size": "1.8rem"
+					"size": "2rem"
 				},
 				{
 					"name": "Medium",
 					"slug": "medium",
-					"size": "2.4rem"
+					"size": "2.5rem"
 				},
 				{
 					"name": "Large",
@@ -75,22 +85,12 @@
 				{
 					"name": "Extra Large",
 					"slug": "extra-large",
-					"size": "3.6rem"
-				},
-				{
-					"name": "Mega",
-					"slug": "mega",
-					"size": "4.8rem"
-				},
-				{
-					"name": "Huge",
-					"slug": "huge",
-					"size": "6.4rem"
+					"size": "4rem"
 				}
 			],
 			"fontFamilies": [
-				{ "name": "Primary", "slug": "primary", "fontFamily": "Pathway Extreme" },
-				{ "name": "Secondary", "slug": "secondary", "fontFamily": "Karla" }
+				{ "name": "Primary", "slug": "primary", "fontFamily": "Barlow" },
+				{ "name": "Secondary", "slug": "secondary", "fontFamily": "DM Sans" }
 			]
 		},
 		"spacing": {
