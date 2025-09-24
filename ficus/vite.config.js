@@ -18,9 +18,15 @@ export default defineConfig({
     manifest: 'manifest.json',
     outDir: 'dist',
     rollupOptions: {
+      output: {
+          assetFileNames: '[name]-[hash].[ext]',
+          chunkFileNames: '[name]-[hash].js',
+          entryFileNames: '[name]-[hash].js'
+      },
       input: {
         main: 'src/scripts/main.ts',
-        editorCustomizer: 'src/scripts/editorCustomizer.ts'
+        editorCustomizer: 'src/scripts/editorCustomizer.ts',
+        professionalBlock: 'blocks/professional/index.ts' 
       }
     },
     // Rimuove console.log in build usando esbuild (nativo)

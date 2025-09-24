@@ -22,14 +22,14 @@ class DynamicBlockCustomizer {
                 const isReady = this.config.isReady || BLOCK_READY_CHECKS['default'];
                 
                 if (isReady()) {
-                    this.log('✅ Blocks are ready');
+                    // this.log('✅ Blocks are ready');
                     resolve();
                 } else if (this.retryCount < this.maxRetries) {
                     this.retryCount++;
-                    this.log(`⏳ Waiting for blocks... (${this.retryCount}/${this.maxRetries})`);
+                    // this.log(`⏳ Waiting for blocks... (${this.retryCount}/${this.maxRetries})`);
                     setTimeout(checkBlocks, this.retryDelay);
                 } else {
-                    this.log('⚠️ Blocks not ready after max retries');
+                    // this.log('⚠️ Blocks not ready after max retries');
                     resolve();
                 }
             };
@@ -39,7 +39,7 @@ class DynamicBlockCustomizer {
 
     private async customizeBlock(): Promise<void> {
         if (typeof wp.blocks === 'undefined') {
-            this.log('❌ wp.blocks not available');
+            // this.log('❌ wp.blocks not available');
             return;
         }
 
@@ -72,9 +72,9 @@ class DynamicBlockCustomizer {
         this.config.stylesToRemove.forEach(styleName => {
             try {
                 wp.blocks.unregisterBlockStyle(this.config.blockName, styleName);
-                this.log(`✅ Removed: ${styleName}`);
+                // this.log(`✅ Removed: ${styleName}`);
             } catch (e) {
-                this.log(`ℹ️ Could not remove ${styleName}:`, e);
+                // this.log(`ℹ️ Could not remove ${styleName}:`, e);
             }
         });
     }
@@ -84,9 +84,9 @@ class DynamicBlockCustomizer {
     this.config.variationsToRemove.forEach(variationName => {
         try {
             wp.blocks.unregisterBlockVariation(this.config.blockName, variationName);
-            this.log(`✅ Removed variation: ${variationName}`);
+            // this.log(`✅ Removed variation: ${variationName}`);
         } catch (e) {
-            this.log(`ℹ️ Could not remove variation ${variationName}:`, e);
+            // this.log(`ℹ️ Could not remove variation ${variationName}:`, e);
         }
     });
 }
@@ -95,9 +95,9 @@ class DynamicBlockCustomizer {
         this.config.stylesToAdd.forEach(style => {
             try {
                 wp.blocks.registerBlockStyle(this.config.blockName, style);
-                this.log(`✅ Registered: ${style.name}`);
+                // this.log(`✅ Registered: ${style.name}`);
             } catch (e) {
-                this.log(`❌ Failed to register ${style.name}:`, e);
+                // this.log(`❌ Failed to register ${style.name}:`, e);
             }
         });
     }
@@ -107,9 +107,9 @@ class DynamicBlockCustomizer {
 
         try {
             const styles = wp.data.select('core/blocks').getBlockStyles(this.config.blockName);
-            this.log(`${label} ${this.config.blockName} styles:`, styles?.map(s => s.name) || 'none');
+            // this.log(`${label} ${this.config.blockName} styles:`, styles?.map(s => s.name) || 'none');
         } catch (e) {
-            this.log(`Could not get ${this.config.blockName} styles:`, e);
+            // this.log(`Could not get ${this.config.blockName} styles:`, e);
         }
     }
     
@@ -118,9 +118,9 @@ class DynamicBlockCustomizer {
 
     try {
         const variations = wp.data.select('core/blocks').getBlockVariations(this.config.blockName);
-        this.log(`${label} ${this.config.blockName} variations:`, variations?.map(v => v.name) || 'none');
+        // this.log(`${label} ${this.config.blockName} variations:`, variations?.map(v => v.name) || 'none');
     } catch (e) {
-        this.log(`Could not get ${this.config.blockName} variations:`, e);
+        // this.log(`Could not get ${this.config.blockName} variations:`, e);
     }
 }
 

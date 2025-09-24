@@ -3,7 +3,7 @@ import BlockCustomizer from './editor/blockCustomizer/index';
 import { StyleInjector } from './editor/styleInjector';
 import { ThemeConfig } from './utils/themeConfig';
 
-console.log('🚀 Editor Customizer caricato! Ora testiamo StyleInjector...');
+//console.log('🚀 Editor Customizer caricato! Ora testiamo StyleInjector...');
 
 /**
  * Classe principale per la gestione dell'editor
@@ -17,7 +17,7 @@ class EditorManager {
     private svgSpriteHandler: SvgSpriteHandler | null = null;
 
     constructor(config: ThemeConfig) {
-        console.log('EditorManager: Inizializzazione...');
+        //console.log('EditorManager: Inizializzazione...');
         this.config = config;
         this.styleInjector = new StyleInjector();
         this.observer = new MutationObserver(this.handleDomMutations.bind(this));
@@ -28,25 +28,25 @@ class EditorManager {
      */
     init(): void {
         if (this.isInitialized) {
-            console.log('EditorManager: Già inizializzato');
+            //console.log('EditorManager: Già inizializzato');
             return;
         }
         
-        console.log('EditorManager: Inizializzazione componenti...');
+        //console.log('EditorManager: Inizializzazione componenti...');
         
         this.blockCustomizer = new BlockCustomizer();
         this.initStyleInjection();
         this.initEventListeners();
         this.isInitialized = true;
         
-        console.log('✅ EditorManager inizializzato con successo');
+        //console.log('✅ EditorManager inizializzato con successo');
     }
 
     /**
      * Configura l'iniezione di stili ottimizzata
      */
     private initStyleInjection(): void {
-        console.log('EditorManager: Inizializzazione style injection...');
+        //console.log('EditorManager: Inizializzazione style injection...');
         
         // Prima iniezione immediata
         this.styleInjector.injectStyles();
@@ -61,12 +61,12 @@ class EditorManager {
      * Inizializza tutti gli event listeners
      */
     private initEventListeners(): void {
-        console.log('EditorManager: Setup event listeners...');
+        //console.log('EditorManager: Setup event listeners...');
         
         // DOM ready listener
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', () => {
-                console.log('EditorManager: DOMContentLoaded');
+                //console.log('EditorManager: DOMContentLoaded');
                 this.setupMutationObserver();
             });
         } else {
@@ -75,7 +75,7 @@ class EditorManager {
 
         // Window load listener
         window.addEventListener('load', () => {
-            console.log('EditorManager: Window loaded');
+            //console.log('EditorManager: Window loaded');
             setTimeout(() => {
                 this.styleInjector.injectStyles();
             }, 500);
@@ -91,14 +91,14 @@ class EditorManager {
     private setupEditorReadyListener(): void {
         // Usa l'API di WordPress se disponibile
         if (typeof wp !== 'undefined' && wp.data && wp.data.subscribe) {
-            console.log('EditorManager: Setup WP data subscriber...');
+            //console.log('EditorManager: Setup WP data subscriber...');
             
             const unsubscribe = wp.data.subscribe(() => {
                 const isEditorReady = wp.data.select('core/editor')?.isCleanNewPost !== undefined ||
                                     wp.data.select('core/block-editor')?.getBlocks !== undefined;
                 
                 if (isEditorReady) {
-                    console.log('✅ Editor WordPress pronto!');
+                    //console.log('✅ Editor WordPress pronto!');
                     setTimeout(() => {
                         this.styleInjector.injectStyles();
                     }, 100);
@@ -106,7 +106,7 @@ class EditorManager {
                 }
             });
         } else {
-            console.log('⚠️ WP data API non disponibile');
+            //console.log('⚠️ WP data API non disponibile');
         }
     }
 
@@ -114,7 +114,7 @@ class EditorManager {
      * Configura l'observer per le mutazioni del DOM
      */
     private setupMutationObserver(): void {
-        console.log('EditorManager: Setup MutationObserver...');
+        //console.log('EditorManager: Setup MutationObserver...');
         
         this.observer.observe(document.body, {
             childList: true,

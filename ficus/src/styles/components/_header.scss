@@ -2,7 +2,7 @@
 
 :root {
 	--header-height: 6rem;
-	--header-height-desktop: 8rem;
+	--header-height-desktop: 9.6rem;
 }
 
 .siteheader {
@@ -38,14 +38,11 @@
 		z-index: 2;
 		height: 3.6rem;
 		@include breakpoint(tablet-landscape) {
-			height: 5.4rem;
+			height: 4.8rem;
 		}
 		svg {
 			height: 100%;
 			width: auto;
-			path {
-				fill: var(--color-primary);
-			}
 		}
 		img {
 			height: 100%;
@@ -160,10 +157,7 @@
 				position: relative;
 				a {
 					position: relative;
-					@extend %cta-reset;
-					@extend %font-primary-m;
-					font-weight: 600;
-					text-transform: uppercase;
+					@extend %font-primary-s;
 					transition: all 0.3s ease;
 				}
 				&[class*="current"] {
@@ -191,17 +185,12 @@
 					margin-top: auto;
 					margin-bottom: auto;
 					a {
-						@include cta-outline(currentColor);
+						@include cta-full;
 					}
 				}
 			}
 			&.sub-menu {
 				gap: 0.5rem;
-				li {
-					a {
-						@extend %font-primary-s;
-					}
-				}
 			}
 		}
 		@include breakpoint(tablet-landscape) {

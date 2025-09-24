@@ -24,6 +24,11 @@
 					"color": "#F2F2F2"
 				},
 				{
+					"name": "Gray medium",
+					"slug": "gray-medium",
+					"color": "#AAAAAA"
+				},
+				{
 					"name": "Delft Blue",
 					"slug": "delft-blue",
 					"color": "#243760"

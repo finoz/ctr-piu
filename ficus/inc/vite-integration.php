@@ -16,6 +16,7 @@ class ViteIntegration {
             'entries' => [
                 'main' => 'src/scripts/main.ts',
                 'editor' => 'src/scripts/editorCustomizer.ts',
+                'professionalBlock'=> 'blocks/professional/index.ts',
             ]
         ];
     }
@@ -169,6 +170,8 @@ class ViteIntegration {
     public static function enqueueEditorAssets() {
         error_log('🎯 ViteIntegration: enqueueEditorAssets chiamato');
         self::enqueueEntry('editor', 'editor-scripts', ['wp-blocks']);
+        self::enqueueEntry('professionalBlock', 'professional-block', ['wp-blocks', 'wp-element', 'wp-components']);
+
     }
 }
 

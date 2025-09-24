@@ -48,3 +48,4 @@ require_once __DIR__ . '/inc/templates.php';    // Gestione template Twig
 require_once __DIR__ . '/inc/theme-setup.php';  // Setup del tema
 require_once __DIR__ . '/inc/vite-integration.php';  // Integrazione con Vite
 require_once __DIR__ . '/inc/shortcodes/index.php'; // Shortcodes del tema
+require_once __DIR__ . '/blocks/index.php'; // custom wp blocks
