@@ -26,13 +26,17 @@
     text-align: center;
     @extend %font-primary-s;
     font-weight: 600;
-    text-transform: uppercase;
-    padding: 0.4rem 1.2rem;
-    min-height: 3.6rem;
+    padding: 0.4rem 2.4rem;
+    min-height: 5.4rem;
     transition: all 0.3s ease;
+    border-radius: 5rem;
+    @include breakpoint(tablet-landscape) {
+        padding: 0.4rem 3.6rem;
+        min-height: 6.4rem;
+    }
 }
 
-@mixin cta-full($bg-color: var(--color-primary), $bg-color-hover: var(--color-secondary), $color: var(--color-text-inverted)) {
+@mixin cta-full($bg-color: var(--color-tertiary), $bg-color-hover: var(--color-secondary), $color: var(--color-primary)) {
     @extend %cta-main;
     color: $color;
     background-color: $bg-color;
@@ -47,7 +51,7 @@
 @mixin cta-outline($color: var(--color-primary), $color-hover: var(--color-secondary)) {
     @extend %cta-main;
     color: $color;
-    border: 2px solid currentColor;
+    border: 1px solid currentColor;
     background-color: transparent;
     &:hover:not(:focus) {
         color: $color-hover;
@@ -73,45 +77,6 @@
         color: var(--color-primary);
         &::before {
             transform: rotate(45deg);
-        }
-    }
-}
-
-%cta-upperlined {
-    position: relative;
-    @extend %cta-reset;
-    @extend %font-primary-m;
-    font-weight: 600;
-    transition: color 300ms ease;
-    &::before,
-    &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        height: 0.3rem;
-        background-color: currentColor;
-    }
-    
-    &::before {
-        z-index: 1;
-        right: 0;
-        width: 100%;
-        transition: width 300ms ease;
-    }
-    &::after {
-        z-index: 2;
-        left: 0;
-        width: 0;
-        transition: width 300ms ease;
-    }
-    &:hover {
-        color: var(--color-primary);
-        &::before {
-            width: 0;
-        }
-        &::after {
-            transition-delay: 250ms;
-            width: 100%;
         }
     }
 }

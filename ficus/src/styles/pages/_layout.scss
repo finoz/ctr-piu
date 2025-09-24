@@ -14,26 +14,11 @@ body {
 	width: 100%;
 	gap: 2.4rem;
 	padding: 1rem;
+	margin-left: auto;
+	margin-right: auto;
 	@include breakpoint(tablet-landscape) {
 		padding: 3rem;
-		display: grid;
-		grid-template-columns: 2fr 5fr;
-		gap: 4rem;
 		max-width: var(--max-width);
-		margin-left: auto;
-		margin-right: auto;
-		h1 {
-			grid-column: 1 / -1;
-		}
-		>.fullrow,
-		>.is-style-wide,
-		>.alignfull,
-		.has-huge-font-size {
-			grid-column: 1 / -1;
-		}
-		> * {
-			grid-column: 2 / -1;
-		}
 	}
 	& + * {
 		margin-top: auto;

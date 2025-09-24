@@ -44,7 +44,6 @@ export const BLOCK_CONFIGURATIONS: BlockCustomizationConfig[] = [
             { name: 'fill', label: 'Fill', isDefault: true },
             { name: 'outline', label: 'Outline' },
             { name: 'arrowed', label: 'Arrowed' },
-            { name: 'upperlined', label: 'Upperlined' },
         ],
         debug: true,
         isReady: BLOCK_READY_CHECKS['core/button']
