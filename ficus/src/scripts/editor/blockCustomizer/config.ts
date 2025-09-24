@@ -54,8 +54,9 @@ export const BLOCK_CONFIGURATIONS: BlockCustomizationConfig[] = [
         blockName: 'core/group',
         stylesToAdd: [
             { name: 'default', label: 'Default', isDefault: true },
-            { name: 'partnership_logos', label: 'Partnership Logos' },
-            { name: 'bigcounter_group', label: 'Big counter' },
+            { name: 'mid_blue', label: 'Azzurro scuro' },
+            { name: 'light_blue', label: 'Azzurro chiaro' },
+            { name: 'outlined_gray', label: 'Grigio bordato' },
         ],
         debug: true,
         isReady: BLOCK_READY_CHECKS['core/button']
