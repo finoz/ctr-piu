@@ -26,7 +26,8 @@ export default defineConfig({
       input: {
         main: 'src/scripts/main.ts',
         editorCustomizer: 'src/scripts/editorCustomizer.ts',
-        professionalBlock: 'blocks/professional/index.ts' 
+        professionalBlock: 'blocks/professional/index.ts',
+        professionalsGridBlock: 'blocks/professionals-grid/index.ts'
       }
     },
     // Rimuove console.log in build usando esbuild (nativo)

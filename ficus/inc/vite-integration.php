@@ -17,6 +17,7 @@ class ViteIntegration {
                 'main' => 'src/scripts/main.ts',
                 'editor' => 'src/scripts/editorCustomizer.ts',
                 'professionalBlock'=> 'blocks/professional/index.ts',
+                'professionalsGridBlock' => 'blocks/professionals-grid/index.ts',
             ]
         ];
     }
@@ -171,7 +172,7 @@ class ViteIntegration {
         error_log('🎯 ViteIntegration: enqueueEditorAssets chiamato');
         self::enqueueEntry('editor', 'editor-scripts', ['wp-blocks']);
         self::enqueueEntry('professionalBlock', 'professional-block', ['wp-blocks', 'wp-element', 'wp-components']);
-
+        self::enqueueEntry('professionalsGridBlock', 'professionals-grid-block', ['wp-blocks', 'wp-element', 'wp-components']);
     }
 }
 
