@@ -1,0 +1,21 @@
+@use '../helpers' as *;
+
+
+
+// Stili per frontend
+.sitemain,
+.is-root-container {
+    .professionals-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        @include breakpoint(tablet-portrait) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6rem;
+        }
+        @include breakpoint(tablet-landscape) {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8rem;
+        }
+    }
+}

@@ -6,7 +6,7 @@ import type { ProfessionalBlockProps } from './types';
 export default function Save({ attributes }: ProfessionalBlockProps) {
     const { avatar, name, role, ctaText, ctaUrl } = attributes;
     const blockProps = useBlockProps.save({
-        className: 'professional-card'
+        className: 'professionalcard'
     });
 
     // Non renderizza nulla se non ci sono dati essenziali
@@ -17,47 +17,36 @@ export default function Save({ attributes }: ProfessionalBlockProps) {
     return (
         <div {...blockProps}>
             {avatar.url && (
-                <div className="professional-card__avatar">
+                <figure className="professionalcard-avatar">
                     <img 
                         src={avatar.url} 
                         alt={avatar.alt || name || 'Professional avatar'}
-                        className="professional-card__image"
                     />
-                </div>
+                </figure>
             )}
             
-            <div className="professional-card__content">
+            <div className="professionalcard-content">
                 {name && (
-                    <h3 className="professional-card__name">
+                    <h3 className="professionalcard-name">
                         {name}
                     </h3>
                 )}
                 
                 {role && (
-                    <p className="professional-card__role">
+                    <p className="professionalcard-role">
                         {role}
                     </p>
                 )}
                 
                 {ctaText && ctaUrl && (
-                    <div className="professional-card__cta">
-                        <a 
-                            href={ctaUrl}
-                            className="professional-card__link"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            {ctaText}
-                        </a>
-                    </div>
-                )}
-                
-                {ctaText && !ctaUrl && (
-                    <div className="professional-card__cta">
-                        <span className="professional-card__link professional-card__link--disabled">
-                            {ctaText}
-                        </span>
-                    </div>
+                    <a 
+                        href={ctaUrl}
+                        className="professionalcard-cta"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {ctaText}
+                    </a>
                 )}
             </div>
         </div>

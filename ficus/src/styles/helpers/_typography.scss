@@ -4,6 +4,10 @@
     --font-size-root: 10px;
     --font-family-primary: var(--wp--preset--font-family--primary);
     --font-family-secondary: var(--wp--preset--font-family--secondary);
+    //
+    --font-lineheight-tight: 1.2;
+    --font-lineheight-normal: 1.5;
+    --font-lineheight-loose: 1.8; 
 }
 
 @include breakpoint(tablet-landscape) {
@@ -12,10 +16,6 @@
     --wp--preset--font-size--medium: 3rem;
     --wp--preset--font-size--large: 4.5rem;
     --wp--preset--font-size--extra-large: 7rem;
-    //
-    --font-lineheight-tight: 1.2;
-    --font-lineheight-normal: 1.5;
-    --font-lineheight-loose: 1.8; 
   }
 }
 
@@ -39,72 +39,52 @@ h6 {
 
 %font-base {
     font-family: var(--font-family-primary);
-    line-height: 1.5;
+    line-height: var(--font-lineheight-normal);
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased !important;
     font-kerning: normal;
-    //font-weight: 400;
-    //font-style: normal;
     margin: 0;
 }
 
 %font-primary-xs {
     @extend %font-base;
-    font-size: 1.2rem;
-    @include breakpoint(tablet-landscape) {
-        font-size: 1.4rem;
-    }
+    font-size: var(--wp--preset--font-size--extra-small);
     
 }
 
 %font-primary-s {
     @extend %font-base;
-    font-size: 1.6rem;
-    @include breakpoint(tablet-landscape) {
-        font-size: 1.8rem;
-    }
+    font-size: var(--wp--preset--font-size--small);
 }
+%font-primary-s-upper-bold {
+    @extend %font-primary-s;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    
+}
+
+%font-primary-std {
+    @extend %font-base;
+    font-size: var(--wp--preset--font-size--normal);
+}
+
 
 %font-primary-m {
     @extend %font-base;
-    font-size: 2.4rem;
+    line-height: var(--font-lineheight-tight);
+    font-size: var(--wp--preset--font-size--medium);
 }
 
 
 %font-primary-l {
     @extend %font-base;
-    line-height: 1.2;
-    font-size: 2.8rem;
-    @include breakpoint(tablet-landscape) {
-        font-size: 3.6rem;
-    }
+    line-height: var(--font-lineheight-tight);
+    font-size: var(--wp--preset--font-size--large);
 }
-
 
 %font-primary-xl {
     @extend %font-base;
-    line-height: 1.2;
-    font-size: 3.6rem;
-    @include breakpoint(tablet-landscape) {
-        font-size: 4.8rem;
-    }
+    line-height: var(--font-lineheight-tight);
+    font-size: var(--wp--preset--font-size--extra-large);
 }
-
-%font-primary-mega {
-    @extend %font-base;
-    line-height: 1.2;
-    font-size: 4.8rem;
-    @include breakpoint(tablet-landscape) {
-        font-size: 8rem;
-    }
-}
-
-%font-primary-huge {
-    @extend %font-base;
-    line-height: 1.2;
-    font-size: 6.4rem;
-    @include breakpoint(tablet-landscape) {
-        font-size: 12rem;
-    }
-}
-

@@ -28,25 +28,27 @@
 		width: 100%;
 	}
 	h1 {
-		@extend %font-primary-mega;
+		@extend %font-primary-xl;
 		width: 100%;
-		font-weight: 600;
+		font-weight: bold;
 	}
 	h2 {
-		@extend %font-primary-xl;
-		font-weight: 600;
+		@extend %font-primary-l;
+		font-weight: bold;
 	}
 	h3 {
-		@extend %font-primary-l;
+		@extend %font-primary-m;
+		font-weight: bold;
 	}
 	h4 {
-		@extend %font-primary-m;
+		@extend %font-primary-std;
+		font-weight: bold;
 	}
 	p {
-		@extend %font-primary-s;
+		@extend %font-primary-std;
 	}
 	ul, ol {
-		@extend %font-primary-s;
+		@extend %font-primary-std;
 	}
 	blockquote {
 		color: var(--color-primary);
@@ -63,7 +65,7 @@
 	}
 	.has-small-font-size,
 	.has-small-font-size * {
-		@extend %font-primary-xs;
+		@extend %font-primary-s;
 	}
 	.has-medium-font-size,
 	.has-medium-font-size * {
@@ -76,13 +78,5 @@
 	.has-extra-large-font-size,
 	.has-extra-large-font-size * {
 		@extend %font-primary-xl;
-	}
-	.has-mega-font-size,
-	.has-mega-font-size * {
-		@extend %font-primary-mega;
-	}
-	.has-huge-font-size,
-	.has-huge-font-size * {
-		@extend %font-primary-huge;
 	}
 }
