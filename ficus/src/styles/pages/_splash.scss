@@ -5,19 +5,24 @@ body.twig-template-splash {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    padding: 0;
     height: 100dvh;
 	.sitemain {
 		position: relative;
 		z-index: 2;
 		display: flex;
 		flex-direction: column;
-		width: 100%;
-		height: 100%;
-		color: var(--color-text-inverted);
-		background-color: var(--color-primary);
-		background-image: linear-gradient(70deg, var(--color-primary), var(--color-secondary));
-		border-radius: 1.2rem;
+		max-width: none;
+		width: 90vw;
+		height: 90dvh;
+		border-radius: var( --radius-s);
+		background-image: linear-gradient(80deg, var(--color-tertiary-alpha-50) 0%, var(--color-secondary-alpha-50) 100%);
+		box-shadow: 1rem 1rem 0 var(--color-tertiary-alpha-10);
+		@include breakpoint(tablet-landscape) {
+				padding: 8rem;
+				border-radius: var( --radius-m);
+				box-shadow: 2rem 2rem 0 var(--color-tertiary-alpha-10);
+			}
 		padding: 4rem;
 		gap: 4rem;
 		will-change: background-image;
@@ -29,16 +34,16 @@ body.twig-template-splash {
 			justify-content: space-between;
 		}
 	}
-	.logotitle {
+	.splash-logo {
 		width: auto;
 		font-size: 1rem;
-		img {
+		img,svg {
 			width: 60vw;
 			height: auto;
 			max-width: 40rem;
 		}
 	}
-	.content {
+	.splash-content {
 		display: flex;
 		flex-direction: column;
 		gap: 2rem;
@@ -49,27 +54,11 @@ body.twig-template-splash {
 			width: auto;
 			margin-top: unset;
 			gap: 4rem; 
-		}
-		&-title {
-			@extend %font-primary-l;
-			color: var(--color-text-inverted);
-			@include breakpoint(tablet-landscape) {
-				display: flex;
-				flex-direction: column;
-			}
-		}
-		&-decor {
-			@extend %font-primary-l;
-			font-style: normal
-		}
-		&-cta {
-			@include cta-outline(var(--color-text-inverted));
-			font-size: 2.4em;
-		}
-		&-address {
-			//@extend %font-secondary-s;
-			display: flex;
-			flex-direction: column;
 		}	
 	}
+	.splash-cta {
+		@include cta-outline;
+		font-size: 2.4em;
+	}
+		
 }

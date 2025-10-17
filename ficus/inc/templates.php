@@ -138,7 +138,7 @@ class Template {
             ],
             'is' => [
                 //'splash' => !is_user_logged_in() && true,
-                'splash' => false,
+                'splash' => true,
                 'home' => is_home(),
                 'front_page' => is_front_page(),
                 'single' => is_single(),
