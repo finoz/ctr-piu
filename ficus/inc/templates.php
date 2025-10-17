@@ -26,7 +26,8 @@ class Template {
         ]);
 
         self::$twig = new Environment($loader, [
-            'cache' => WP_DEBUG ? false : get_template_directory() . '/cache/twig',
+            //'cache' => WP_DEBUG ? false : get_template_directory() . '/cache/twig',
+            'cache' => false,
             'auto_reload' => true,
             'debug' => WP_DEBUG,
         ]);
@@ -137,8 +138,8 @@ class Template {
                 ]
             ],
             'is' => [
-                //'splash' => !is_user_logged_in() && true,
-                'splash' => true,
+                //'splash' => false, // RIATTIVA LA CACHE, l29, a fine sviluppo! e riattiva anche la cache dinamica di aruba
+                'splash' => !is_user_logged_in(),
                 'home' => is_home(),
                 'front_page' => is_front_page(),
                 'single' => is_single(),
@@ -226,7 +227,6 @@ class Template {
         if (self::$context['is']['splash']) {
             return 'splash.twig';
         } else {
-
             if (is_404()) {
                 return '404.twig';
             }
