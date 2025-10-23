@@ -2,8 +2,6 @@
 
 .sitefooter {
 	z-index: 1;
-	color: var(--color-text-inverted);
-	background-color: var(--color-text);
 	@extend %font-primary-xs;
 	margin-top: 6rem;
 	&-inner {
@@ -20,6 +18,11 @@
 			padding: 4rem;
 			gap: 6rem;
 
+		}
+	}
+	.logo {
+		img, svg {
+			max-width: 20rem;
 		}
 	}
 	.widgetarea {
@@ -64,7 +67,7 @@
 			
 		}
 		&--credits {
-			border-top: 3px solid currentColor;
+			border-top: 1px solid currentColor;
 			padding-top: 4rem;
 			width: 100%;
 			flex-basis: 100%;

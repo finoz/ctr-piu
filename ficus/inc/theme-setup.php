@@ -1,5 +1,6 @@
 <?php
 namespace Ficus;
+require_once __DIR__ . '/menu-walker.php';
 
 /**
  * Gestione del setup del tema
@@ -66,6 +67,7 @@ class ThemeSetup {
     public static function modify_nav_menu_args($args) {
         if($args['theme_location'] == 'header-menu') {
             $args['container'] = false; // Rimuove il container div
+            $args['walker'] = new CheckboxMenuWalker(); // Usa il custom walker
         }
         return $args;
     }
