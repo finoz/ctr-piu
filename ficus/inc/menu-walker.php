@@ -31,7 +31,7 @@ class CheckboxMenuWalker extends Walker_Nav_Menu {
      */
     public function end_lvl(&$output, $depth = 0, $args = null) {
         $indent = str_repeat("\t", $depth);
-        $output .= "$indent</li>\n";
+        $output .= "$indent</ul>\n";
     }
 
     /**

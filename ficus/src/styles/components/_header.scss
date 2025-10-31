@@ -184,6 +184,17 @@
 						}
 					}
 				}
+                &.highlight {
+                    @include breakpoint(tablet-landscape, max) {
+                        margin-top: auto;
+                        margin-bottom: 2rem;
+                    }
+                    a {
+                        @include cta-full();
+                        min-height: 4.2rem;
+                        padding: 0 2.5rem;
+                    }
+                }
             }
         }
         .menu-toggle-input {
@@ -352,7 +363,6 @@
                         width: calc(100% - var(--header-height-desktop));
                         max-height: 0;
                         opacity: 0;
-                        display: flex;
                         flex-direction: row;
                         align-items: flex-start;
                         justify-content: space-between;
