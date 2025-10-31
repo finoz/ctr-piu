@@ -18,6 +18,9 @@
 			position: relative;
 			padding: 2.4rem;
 			border-radius: var( --radius-s);
+			> * {
+				max-width: none;
+			}
 			@include breakpoint(tablet-landscape) {
 				padding: 8rem;
 				border-radius: var( --radius-m);

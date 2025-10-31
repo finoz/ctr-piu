@@ -18,6 +18,12 @@ class CheckboxMenuWalker extends Walker_Nav_Menu {
     public function start_lvl(&$output, $depth = 0, $args = null) {
         $indent = str_repeat("\t", $depth);
         $output .= "\n$indent<ul class=\"sub-menu\">\n";
+        if ($depth == 0) {
+            $close_label = __('Close');
+            $output .= "\n$indent<li class=\"sub-menu-close\" aria-label=\"close menu\">";
+            $output .= "\n$indent\t<label for=\"menu-toggle-" . $this->checkbox_counter . "\">$close_label</label>";
+            $output .= "\n$indent</li>\n";
+        }
     }
 
     /**
@@ -25,7 +31,7 @@ class CheckboxMenuWalker extends Walker_Nav_Menu {
      */
     public function end_lvl(&$output, $depth = 0, $args = null) {
         $indent = str_repeat("\t", $depth);
-        $output .= "$indent</ul>\n";
+        $output .= "$indent</li>\n";
     }
 
     /**

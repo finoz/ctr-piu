@@ -217,7 +217,6 @@
                     height: 0.2rem;
                     transform: translateY(-50%);
                 }
-                
                 &::after {
                     top: 20%;
                     bottom: 20%;
@@ -230,8 +229,22 @@
         
         // Submenu nascosto di default
         .sub-menu {
+            position: relative;
             max-height: 0;
             overflow: hidden;
+            padding-left: 2rem;
+            .sub-menu-close {
+                display: none;
+                position: absolute;
+                top: 2rem;
+                right: 2rem;
+                cursor: pointer;
+                label {
+                    @extend %font-primary-s;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                }
+            }
             // Link nei submenu
             a {
                 //
@@ -239,7 +252,7 @@
             // Terzo livello
             .sub-menu {
                 a {
-                    //
+                    opacity: 0.5;
                 }
             }
         }
@@ -256,6 +269,7 @@
             // Mostra submenu
             ~ .sub-menu {
                 max-height: 100vh;
+                padding-top: 2rem;
             }
         }
         
@@ -283,7 +297,49 @@
             ul.menu {
                 > .menu-item-has-children {
                     // second level submenu
+                    > .sub-menu {
+                        display: none;
+                        z-index: 2;
+                    }
+                    &:has(> .menu-toggle-input:checked) {
+                        &::before {
+                            content: '';
+                            position: fixed;
+                            top: var(--header-height-desktop);
+                            left: 0;
+                            width: 100%;
+                            height: calc(100vh - var(--header-height-desktop));
+                            background-color: var(--color-overlay-alpha);
+                            z-index: 1;
+                        }
+                    }
+                     .menu-toggle-icon {                        
+                        &::before {
+                            top: 20%;
+                            left: 40%;
+                            right: auto;
+                            height: 60%;
+                            width: 60%;
+                            transform: none;
+                            border-left: 1px solid currentColor;
+                            border-bottom: 1px solid currentColor;
+                            background-color: transparent;
+                            rotate: -45deg;
+                        }
+                        &::after {
+                            display: none;
+                        }
+                    }
+                     .menu-toggle-input:checked {
+                        // Ruota icona
+                        ~ .menu-toggle-label .menu-toggle-icon {
+                            &::before {
+                                rotate: -225deg;
+                            }
+                        }
+                    }
                     > .menu-toggle-input:checked +label + .sub-menu {
+                        display: flex;
                         max-height: none;
                         min-height: fit-content;
                         height: calc(100vh -  var(--header-height-desktop)*2);
@@ -307,6 +363,11 @@
                         padding: 8rem;
                         border-radius: var( --radius-m);
             			box-shadow: 1rem 1rem 0 var(--color-tertiary-alpha-50);
+                        // close button
+                        .sub-menu-close {
+                            display: block;
+                            width: auto;
+                        }
                         // Colonne secondo livello
                         > li {
                             display: flex;
