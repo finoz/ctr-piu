@@ -30,6 +30,9 @@ export const BLOCK_READY_CHECKS = {
     'core/groups': () => {
         return !!(wp.blocks && wp.data?.select('core/blocks'));
     },
+    'core/list': () => {
+        return !!(wp.blocks && wp.data?.select('core/blocks'));
+    },
     'default': () => {
         return !!(wp.blocks && wp.data?.select('core/blocks'));
     }
@@ -95,8 +98,7 @@ export const BLOCK_CONFIGURATIONS: BlockCustomizationConfig[] = [
         blockName: 'core/image',
         stylesToRemove: ['rounded'],
         stylesToAdd: [
-            { name: 'default', label: 'Default', isDefault: true },
-            { name: 'watermark', label: 'Watermark'},
+            { name: 'default', label: 'Default', isDefault: true }
         ],
         debug: true,
         isReady: BLOCK_READY_CHECKS['core/image']
@@ -114,5 +116,15 @@ export const BLOCK_CONFIGURATIONS: BlockCustomizationConfig[] = [
         ],
         debug: true,
         isReady: BLOCK_READY_CHECKS['core/gallery']
+    },
+    // list
+    {
+        blockName: 'core/list',
+        stylesToAdd: [
+            { name: 'default', label: 'Default', isDefault: true },
+            { name: 'square', label: 'Square' },
+        ],
+        debug: true,
+        isReady: BLOCK_READY_CHECKS['core/list']
     }
 ];
