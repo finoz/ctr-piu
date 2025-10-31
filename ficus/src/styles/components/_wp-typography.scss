@@ -79,4 +79,21 @@
 	.has-extra-large-font-size * {
 		@extend %font-primary-xl;
 	}
+	.wp-block-heading {
+		&.is-style-squared {
+			position: relative;
+			line-height: 1;
+			&::before {
+				content: '';
+				position: absolute;
+				width: 1.5em;
+				height: 1.5em;
+				background-color: var(--color-tertiary-alpha-50);
+				top: 50%;
+				transform: translateY(-50%);
+				z-index: -1;
+				left: -0.25em;
+			}
+		}
+	}
 }

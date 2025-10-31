@@ -33,6 +33,9 @@ export const BLOCK_READY_CHECKS = {
     'core/list': () => {
         return !!(wp.blocks && wp.data?.select('core/blocks'));
     },
+    'core/heading': () => {
+        return !!(wp.blocks && wp.data?.select('core/blocks'));
+    },
     'default': () => {
         return !!(wp.blocks && wp.data?.select('core/blocks'));
     }
@@ -126,5 +129,14 @@ export const BLOCK_CONFIGURATIONS: BlockCustomizationConfig[] = [
         ],
         debug: true,
         isReady: BLOCK_READY_CHECKS['core/list']
+    },
+    {
+    blockName: 'core/heading',
+        stylesToAdd: [
+            { name: 'default', label: 'Default', isDefault: true },
+            { name: 'squared', label: 'Squared' }
+        ],
+        debug: true,
+        isReady: BLOCK_READY_CHECKS['default']
     }
 ];
