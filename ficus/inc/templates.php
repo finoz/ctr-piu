@@ -138,8 +138,7 @@ class Template {
                 ]
             ],
             'is' => [
-                //'splash' => false, // RIATTIVA LA CACHE, l29, a fine sviluppo! e riattiva anche la cache dinamica di aruba
-                'splash' => !is_user_logged_in(),
+                'splash' => false, //!is_user_logged_in(), // RIATTIVA LA CACHE, l29, a fine sviluppo! e riattiva anche la cache dinamica di aruba
                 'home' => is_home(),
                 'front_page' => is_front_page(),
                 'single' => is_single(),
